@@ -1,3 +1,17 @@
+module "apigatewaymod" {
+
+  source                            = "./apigateway"
+  outaws_lambda_function            = module.lambdamod.outaws_lambda_function
+  nameughttpapigateway              = "serverless-games-analytics"
+  protocoltypeughttpapigateway      = "HTTP"
+  integrationtypeugapiintegration   = "AWS_PROXY"
+  integrationmethodugapiintegration = "POST"
+  routekeyugapiroute                = "$default"
+  nameugapistage                    = "KinesesProducer"
+
+
+}
+
 resource "aws_apigatewayv2_api" "ughttpapigateway" {
 
   name          = var.nameughttpapigateway
